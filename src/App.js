@@ -3,12 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import ProductoList from './pages/ProductoList.js';
+import StoreNavBar from './components/NavBar.js';
 
 function App() {
   return (
     <Router>
       <div>
-        <h1>Product Management System</h1>
+        <StoreNavBar />
         <Routes>
           <Route path="/" element={<ProductoList />} />
         </Routes>

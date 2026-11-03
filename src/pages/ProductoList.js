@@ -23,14 +23,13 @@ const ProductoList = () => {
     }
 
     return (
-        <div>
-            <Row>
-                    {productos.map(prod => (
-                        <Col>
-                            <ProductoCard producto={prod}></ProductoCard>
-                        </Col>
-                    ))}
-                
+        <div className="container mt-4">
+            <Row md={3} className="d-flex justify-content-center">
+                {productos.map((prod, index) => (
+                    <Col key={index} className="mb-4 d-flex justify-content-between align-items-stretch">
+                        <ProductoCard producto={prod}></ProductoCard>
+                    </Col>
+                ))}
             </Row>
         </div>
     );
