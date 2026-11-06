@@ -6,6 +6,7 @@ import ProductoList from './pages/ProductoList.js';
 import StoreNavBar from './components/NavBar.js';
 
 function App() {
+
   return (
     <Router>
       <div>

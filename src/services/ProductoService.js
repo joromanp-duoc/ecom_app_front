@@ -16,4 +16,6 @@ class ProductoService {
         return axios.delete(`${BASE_URL}/${id}`);
     }
 }
-export default new ProductoService();
+const productoService = new ProductoService();
+
+export default productoService;

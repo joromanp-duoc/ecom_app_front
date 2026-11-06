@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card'
 
-function ProductoCard({ producto }) {
+function ProductoCard({ producto, agregar }) {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Body>
@@ -11,7 +11,10 @@ function ProductoCard({ producto }) {
           {producto.descripcion}
         </Card.Text>
         {/* <Card.Link href="#">Card Link</Card.Link> */}
-        <Card.Link href="#">Comprar ahora</Card.Link>
+        <Card.Link onClick={() => agregar(producto)} disabled={producto.stock <= 0}>Comprar ahora</Card.Link>
+        {/* <button >
+          Agregar al carrito
+        </button> */}
       </Card.Body>
     </Card>
   );
