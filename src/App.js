@@ -1,21 +1,25 @@
 //import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
 
 import ProductoList from './pages/ProductoList.js';
+import Login from './pages/Login.js';
 import StoreNavBar from './components/NavBar.js';
 
 function App() {
-
   return (
-    <Router>
-      <div>
-        <StoreNavBar />
-        <Routes>
-          <Route path="/" element={<ProductoList />} />
-        </Routes>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div>
+          <StoreNavBar />
+          <Routes>
+            <Route path="/" element={<ProductoList />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
